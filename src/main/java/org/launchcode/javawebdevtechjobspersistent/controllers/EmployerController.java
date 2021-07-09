@@ -12,15 +12,15 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("employers")
+@RequestMapping("/employers")
 public class EmployerController {
 
     @Autowired
-    EmployerRepository employerRepository;
+    private EmployerRepository employerRepository;
 
     @GetMapping("")
-    public String index(@RequestParam(required = false) EmployerRepository employerRepository, Model model) {
-        model.addAttribute("title","Employer Name");
+    public String displayAllEmployers(Model model) {
+        model.addAttribute("title","All Employers");
         model.addAttribute("employers",employerRepository.findAll());
         return "employers/index";
     }

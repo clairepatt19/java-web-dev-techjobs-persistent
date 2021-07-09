@@ -12,7 +12,7 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank
+    @NotBlank(message="Please Enter an Employer Name")
     @Size(min=1,max=75)
     private String name;
 
