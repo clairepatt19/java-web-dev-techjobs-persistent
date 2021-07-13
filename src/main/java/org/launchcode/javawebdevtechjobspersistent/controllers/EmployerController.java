@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/employers")
+@RequestMapping("employers")
 public class EmployerController {
 
     @Autowired
