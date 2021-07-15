@@ -6,9 +6,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Skill extends AbstractEntity {
-    
-    public Job jobs;
 
+    private List<Job>jobs = new ArrayList<>();
+    
     public String description;
 
     public Skill(){}
