@@ -6,7 +6,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Skill extends AbstractEntity {
-
+    
+    public Job jobs;
 
     public String description;
 
@@ -14,6 +15,14 @@ public class Skill extends AbstractEntity {
 
     public String getDescription() {
         return description;
+    }
+
+    public Job getjobs() {
+        return jobs;
+    }
+
+    public Job setjobs(Job jobs) {
+        return this.jobs = jobs;
     }
 
     public void setDescription(String description) {
