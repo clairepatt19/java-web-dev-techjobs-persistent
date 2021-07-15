@@ -17,13 +17,15 @@ public class Skill extends AbstractEntity {
         return description;
     }
 
-    public Job getjobs() {
+    public List<Job> getJobs() {
         return jobs;
     }
 
-    public Job setjobs(Job jobs) {
-        return this.jobs = jobs;
+    public List<Job> setJobs() {
+        this.jobs = jobs;
     }
+
+    
 
     public void setDescription(String description) {
         this.description = description;
