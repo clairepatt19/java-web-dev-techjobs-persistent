@@ -84,6 +84,7 @@ public class HomeController {
         Optional<Job> result = jobRepository.findById(jobId);
         Job job = result.get();
         model.addAttribute("job", job);
+        model.addAttribute("skill", job);
         return "view";
 
 
