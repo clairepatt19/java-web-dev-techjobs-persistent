@@ -58,6 +58,7 @@ public class HomeController {
         } else {
             model.addAttribute("title", "Add Job");
             Optional<Employer> result = employerRepository.findById(employerId);
+            Optional<Skill> skillResult = skillRepository.findById(employerId);
             if (result.isEmpty()) {
                 model.addAttribute("title", "Invalid Employer ID: " + employerId);
             } else {
@@ -65,10 +66,16 @@ public class HomeController {
                 newJob.setEmployer(employer);
                 model.addAttribute("title", "Employers in job: " + employer.getName());
                 model.addAttribute("employers", employer.getJobs());
+                Skill skill = skillResult.get();
+                newJob.setSkills(newJob.getSkills());
+                model.addAttribute("title", "Skills in job: " + skill.getName());
+                model.addAttribute("skills", skill.getName());
 
             }
             jobRepository.save(newJob);
             return "redirect:";
+
+
         }
     }
 
@@ -76,7 +83,7 @@ public class HomeController {
     public String displayViewJob(Model model, @PathVariable int jobId) {
         Optional<Job> result = jobRepository.findById(jobId);
         Job job = result.get();
-        model.addAttribute("jobs", job.getEmployer());
+        model.addAttribute("job", job);
         return "view";
 
 
