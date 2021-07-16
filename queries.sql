@@ -3,6 +3,8 @@
 select * from techjobs.job;
 id, employer, name, skills
 select DATA_TYPE from techjobs.job;
+or
+desc techjobs.job;
 id -int PK; employer, name, skills -varchar(255)
 
 ## Part 2: Test it with SQL
@@ -14,3 +16,5 @@ where location = "St. Louis";
 drop techjobs.job FROM techjobs;
 
 ## Part 4: Test it with SQL
+SELECT name, description from skill
+JOIN job_skills ON skill.id = job_skills.skills_id;
