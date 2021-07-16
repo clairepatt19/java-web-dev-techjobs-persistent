@@ -69,7 +69,7 @@ public class HomeController {
                 Skill skill = skillResult.get();
                 newJob.setSkills(newJob.getSkills());
                 model.addAttribute("title", "Skills in job: " + skill.getName());
-                model.addAttribute("skills", skill.getName());
+                model.addAttribute("skills", employer.getJobs());
 
             }
             jobRepository.save(newJob);
@@ -84,7 +84,7 @@ public class HomeController {
         Optional<Job> result = jobRepository.findById(jobId);
         Job job = result.get();
         model.addAttribute("job", job);
-        model.addAttribute("skill", job);
+//        model.addAttribute("skill", job);
         return "view";
 
 
